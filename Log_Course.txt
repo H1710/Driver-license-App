@@ -1,0 +1,14 @@
+Log 1:
+Member -> Update Profile -> View Available Courses -> Register for Course -> Select Time Slots -> Choose Mentor -> Take Practice Test
+
+
+Log 2:
+Staff -> View Member Information -> View Course Questions -> Manage User Profiles
+
+
+Log 3:
+Staff -> Create New Question -> Edit Existing Question -> Delete Question -> Randomly Generate Questions
+
+
+Log 4:
+Administrator -> Create User Accounts -> View User Details -> Edit User Information -> Deactivate User Account
