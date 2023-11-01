@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 using BusinessObejcts;
 namespace Repository
 {
-    public interface IMember
+    public interface ICourse
     {
-        public User checkLogin(string email, string password);
-
-        public bool updateMember(User user);
+        public List<Course> getListCourse();
     }
 }

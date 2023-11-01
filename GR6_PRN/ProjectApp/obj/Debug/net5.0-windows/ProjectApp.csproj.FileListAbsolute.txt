@@ -68,3 +68,4 @@ D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.pdb
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.genruntimeconfig.cache
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ref\ProjectApp.dll
+D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.frmCourse.resources

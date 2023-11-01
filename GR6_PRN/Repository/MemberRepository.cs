@@ -10,5 +10,7 @@ namespace Repository
     public class MemberRepository : IMember
     {
         public User checkLogin(string email, string password) => MemberDao.checkLogin(email, password);
+
+        public bool updateMember(User user) => MemberDao.updateMember(user);
     }
 }
