@@ -9,5 +9,7 @@ namespace Repository
     public interface IMember
     {
         public User checkLogin(string email, string password);
+
+        public bool updateMember(User user);
     }
 }

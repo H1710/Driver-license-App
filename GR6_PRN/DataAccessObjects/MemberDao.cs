@@ -26,6 +26,7 @@ namespace DataAccessObjects
             }
         }
 
+
         public static User checkLogin(string email, string password)
         {
             User user = null;
@@ -39,6 +40,22 @@ namespace DataAccessObjects
                 Console.WriteLine(ex.Message);
             }
             return user;
+        }
+
+        public static bool updateMember(User user)
+        {
+            bool rs = false;
+            try
+            {
+                using var db = new PRN211Context();
+                db.Users.Update(user);
+                db.SaveChanges();
+                rs = true;
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return rs;
         }
     }
 }
