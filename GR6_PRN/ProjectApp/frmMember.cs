@@ -112,7 +112,8 @@ namespace ProjectApp
 
         private void btnViewCourse_Click(object sender, EventArgs e)
         {
-
+            frmCourse f = new frmCourse();
+            f.ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e) => Close();
