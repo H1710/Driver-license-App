@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_App
 {
-    public partial class frmProfileUser : Form
+    public partial class frmMember : Form
     {
-        public frmProfileUser()
+        public frmMember()
         {
             InitializeComponent();
         }

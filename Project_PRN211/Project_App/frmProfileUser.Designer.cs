@@ -1,6 +1,6 @@
 ﻿namespace Project_App
 {
-    partial class frmProfileUser
+    partial class frmMember
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            lbMember = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
-            // frmProfileUser
+            // lbMember
+            // 
+            lbMember.AutoSize = true;
+            lbMember.Location = new System.Drawing.Point(638, 58);
+            lbMember.Name = "lbMember";
+            lbMember.Size = new System.Drawing.Size(50, 20);
+            lbMember.TabIndex = 0;
+            lbMember.Text = "label1";
+            // 
+            // frmMember
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1424, 648);
-            Name = "frmProfileUser";
-            Text = "frmProfileUser";
+            Controls.Add(lbMember);
+            Name = "frmMember";
+            Text = "frmMember";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lbMember;
     }
 }

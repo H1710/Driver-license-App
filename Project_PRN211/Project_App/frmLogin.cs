@@ -25,7 +25,7 @@ namespace Project_App
             User u = manageUser.checkLogin(txtEmail.Text, txtPassword.Text);
             if (u != null && u.RoleId == 1)
             {
-                frmProfileUser f = new frmProfileUser();
+                frmMember f = new frmMember();
                 f.ShowDialog();
             }
         }
