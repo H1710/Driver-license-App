@@ -38,19 +38,9 @@ namespace DataAccessObjects
         {
             if (!optionsBuilder.IsConfigured)
             {
-/*#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-HP2DTMU\\MSSQLSERVER01; Database=PRN211; Uid=sa; Pwd=12345");*/
-                optionsBuilder.UseSqlServer(GetConectionString());
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=DESKTOP-HP2DTMU\\MSSQLSERVER01; Database=PRN211; Uid=sa; Pwd=12345");
             }
-        }
-
-        public string GetConectionString()
-        {
-            IConfiguration config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
-            return config["ConnectionStrings:DefaultDB"];
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -61,9 +51,7 @@ namespace DataAccessObjects
             {
                 entity.ToTable("courses");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Description)
                     .HasMaxLength(1000)
@@ -85,9 +73,9 @@ namespace DataAccessObjects
 
             modelBuilder.Entity<CourseMentorSlot>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("course_mentor_slots");
+
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.CourseId).HasColumnName("courseId");
 
@@ -96,28 +84,26 @@ namespace DataAccessObjects
                 entity.Property(e => e.SlotId).HasColumnName("slotId");
 
                 entity.HasOne(d => d.Course)
-                    .WithMany()
+                    .WithMany(p => p.CourseMentorSlots)
                     .HasForeignKey(d => d.CourseId)
-                    .HasConstraintName("FK__course_me__cours__5DCAEF64");
+                    .HasConstraintName("FK__course_me__cours__5EBF139D");
 
                 entity.HasOne(d => d.Mentor)
-                    .WithMany()
+                    .WithMany(p => p.CourseMentorSlots)
                     .HasForeignKey(d => d.MentorId)
-                    .HasConstraintName("FK__course_me__mento__5EBF139D");
+                    .HasConstraintName("FK__course_me__mento__5FB337D6");
 
                 entity.HasOne(d => d.Slot)
-                    .WithMany()
+                    .WithMany(p => p.CourseMentorSlots)
                     .HasForeignKey(d => d.SlotId)
-                    .HasConstraintName("FK__course_me__slotI__5FB337D6");
+                    .HasConstraintName("FK__course_me__slotI__60A75C0F");
             });
 
             modelBuilder.Entity<Mentor>(entity =>
             {
                 entity.ToTable("mentors");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.AvailableSlots).HasColumnName("available_slots");
 
@@ -137,9 +123,7 @@ namespace DataAccessObjects
             {
                 entity.ToTable("mentor_ratings");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Feedback)
                     .HasMaxLength(1000)
@@ -166,9 +150,7 @@ namespace DataAccessObjects
             {
                 entity.ToTable("news");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Content)
                     .HasMaxLength(1000)
@@ -186,7 +168,7 @@ namespace DataAccessObjects
             modelBuilder.Entity<Profile>(entity =>
             {
                 entity.HasKey(e => e.UserId)
-                    .HasName("PK__profiles__CB9A1CFFD414AC78");
+                    .HasName("PK__profiles__CB9A1CFF5B4D3667");
 
                 entity.ToTable("profiles");
 
@@ -209,9 +191,7 @@ namespace DataAccessObjects
             {
                 entity.ToTable("questions");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Answer)
                     .IsRequired()
@@ -248,9 +228,7 @@ namespace DataAccessObjects
             {
                 entity.ToTable("registrations");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.PaymentStatus).HasColumnName("payment_status");
 
@@ -273,9 +251,7 @@ namespace DataAccessObjects
             {
                 entity.ToTable("roles");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
@@ -287,9 +263,7 @@ namespace DataAccessObjects
             {
                 entity.ToTable("slots");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Date)
                     .HasColumnType("date")
@@ -304,9 +278,7 @@ namespace DataAccessObjects
             {
                 entity.ToTable("tests");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Title)
                     .IsRequired()
@@ -318,9 +290,7 @@ namespace DataAccessObjects
             {
                 entity.ToTable("test_questions");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.QuestionId).HasColumnName("questionId");
 
@@ -341,9 +311,7 @@ namespace DataAccessObjects
             {
                 entity.ToTable("users");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Email)
                     .IsRequired()
@@ -369,59 +337,51 @@ namespace DataAccessObjects
 
             modelBuilder.Entity<UserCourse>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("user_courses");
+
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.CourseId).HasColumnName("courseId");
 
                 entity.Property(e => e.UserId).HasColumnName("userId");
 
                 entity.HasOne(d => d.Course)
-                    .WithMany()
+                    .WithMany(p => p.UserCourses)
                     .HasForeignKey(d => d.CourseId)
-                    .HasConstraintName("FK__user_cour__cours__628FA481");
+                    .HasConstraintName("FK__user_cour__cours__6477ECF3");
 
                 entity.HasOne(d => d.User)
-                    .WithMany()
+                    .WithMany(p => p.UserCourses)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__user_cour__userI__619B8048");
+                    .HasConstraintName("FK__user_cour__userI__6383C8BA");
             });
 
             modelBuilder.Entity<UserSlot>(entity =>
             {
-                entity.HasKey(e => new { e.UserId, e.SlotId })
-                    .HasName("PK__user_slo__E25EBA8EBD54FF3A");
-
                 entity.ToTable("user_slots");
 
-                entity.Property(e => e.UserId).HasColumnName("userId");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.SlotId).HasColumnName("slotId");
+
+                entity.Property(e => e.UserId).HasColumnName("userId");
 
                 entity.HasOne(d => d.Slot)
                     .WithMany(p => p.UserSlots)
                     .HasForeignKey(d => d.SlotId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__user_slot__slotI__4D94879B");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserSlots)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__user_slot__userI__4CA06362");
             });
 
             modelBuilder.Entity<UserTest>(entity =>
             {
-                entity.HasKey(e => new { e.UserId, e.TestId })
-                    .HasName("PK__user_tes__51B3A34730C75CAC");
-
                 entity.ToTable("user_tests");
 
-                entity.Property(e => e.UserId).HasColumnName("userId");
-
-                entity.Property(e => e.TestId).HasColumnName("testId");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.EndTime)
                     .HasColumnType("datetime")
@@ -433,16 +393,18 @@ namespace DataAccessObjects
                     .HasColumnType("datetime")
                     .HasColumnName("start_time");
 
+                entity.Property(e => e.TestId).HasColumnName("testId");
+
+                entity.Property(e => e.UserId).HasColumnName("userId");
+
                 entity.HasOne(d => d.Test)
                     .WithMany(p => p.UserTests)
                     .HasForeignKey(d => d.TestId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__user_test__testI__49C3F6B7");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserTests)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__user_test__userI__48CFD27E");
             });
 
