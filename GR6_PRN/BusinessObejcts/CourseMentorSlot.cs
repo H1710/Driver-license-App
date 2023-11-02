@@ -7,6 +7,7 @@ namespace BusinessObejcts
 {
     public partial class CourseMentorSlot
     {
+        public int Id { get; set; }
         public int? CourseId { get; set; }
         public int? MentorId { get; set; }
         public int? SlotId { get; set; }
