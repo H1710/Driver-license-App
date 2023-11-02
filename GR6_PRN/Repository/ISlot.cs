@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessObejcts;
-using DataAccessObjects;
 namespace Repository
 {
-    public class MentorRepository : IMentor
-    {
-        public List<Mentor> getMentors(int id) => MentorDao.GetMentors(id);
+    public interface ISlot
+    { 
+        public List<Slot> GetSlots(int id);
+
+        public bool regisUserSlot (UserSlot slot);
     }
 }

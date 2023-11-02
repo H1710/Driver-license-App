@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using BusinessObejcts;
+using DataAccessObjects;
 namespace Repository
 {
-    internal interface IMentor
+    public interface IMentor
     {
+        public List<Mentor> getMentors(int id);
     }
 }

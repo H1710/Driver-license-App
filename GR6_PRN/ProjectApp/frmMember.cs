@@ -112,7 +112,10 @@ namespace ProjectApp
 
         private void btnViewCourse_Click(object sender, EventArgs e)
         {
-            frmCourse f = new frmCourse();
+            frmCourse f = new frmCourse()
+            {
+                user = user,
+            };
             f.ShowDialog();
         }
 

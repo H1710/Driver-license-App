@@ -2,8 +2,12 @@
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+<<<<<<< HEAD
 using Microsoft.Extensions.Configuration;
 
+=======
+using BusinessObejcts;
+>>>>>>> Log1_N
 #nullable disable
 
 namespace BusinessObejcts
@@ -40,19 +44,9 @@ namespace BusinessObejcts
         {
             if (!optionsBuilder.IsConfigured)
             {
-/*#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-HP2DTMU\\MSSQLSERVER01; Database=PRN211; Uid=sa; Pwd=12345");*/
-                optionsBuilder.UseSqlServer(GetConectionString());
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=DESKTOP-HP2DTMU\\MSSQLSERVER01; Database=PRN211; Uid=sa; Pwd=12345");
             }
-        }
-
-        public string GetConectionString()
-        {
-            IConfiguration config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
-            return config["ConnectionStrings:DefaultDB"];
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -180,7 +174,11 @@ namespace BusinessObejcts
             modelBuilder.Entity<Profile>(entity =>
             {
                 entity.HasKey(e => e.UserId)
+<<<<<<< HEAD
                     .HasName("PK__profiles__CB9A1CFF5A6CF0E3");
+=======
+                    .HasName("PK__profiles__CB9A1CFF5B4D3667");
+>>>>>>> Log1_N
 
                 entity.ToTable("profiles");
 
@@ -263,9 +261,7 @@ namespace BusinessObejcts
             {
                 entity.ToTable("roles");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
@@ -277,9 +273,7 @@ namespace BusinessObejcts
             {
                 entity.ToTable("slots");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Date)
                     .HasColumnType("date")

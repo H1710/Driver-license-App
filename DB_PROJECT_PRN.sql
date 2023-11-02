@@ -6,7 +6,7 @@ GO
 
 -- Bảng vai trò (role)
 CREATE TABLE roles (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     [name] NVARCHAR(50) NOT NULL
 );
 GO
@@ -81,7 +81,7 @@ Go
 
 -- Bảng slot (slots)
 CREATE TABLE slots (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     [date] DATE NOT NULL,
     start_time TIME,
     end_time TIME
@@ -138,11 +138,19 @@ CREATE TABLE user_slots (
 );
 GO
 
+<<<<<<< HEAD
 INSERT INTO user_slots (userId, slotId) VALUES
 (1,1),
 (2,2),
 (3,1);
 Go
+=======
+INSERT INTO user_slots (id, userId, slotId) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(3, 3, 1);
+
+>>>>>>> Log1_N
 
 -- Bảng Mentor (mentors)
 CREATE TABLE mentors (
@@ -193,7 +201,11 @@ Go
 
 -- Bảng quản lý bài đăng (news_management)
 CREATE TABLE news (
+<<<<<<< HEAD
     id INT IDENTITY(1,1) PRIMARY KEY,
+=======
+    id INT IDENTITY(1,1)  PRIMARY KEY,
+>>>>>>> Log1_N
     title NVARCHAR(255),
     content NVARCHAR(1000),
     post_date DATE
@@ -220,7 +232,11 @@ Go
 
 -- Bảng liên kết giữa khóa học, mentor và slot học (course_mentor_slots)
 CREATE TABLE course_mentor_slots (
+<<<<<<< HEAD
 	id INT IDENTITY(1,1) PRIMARY KEY,
+=======
+    id INT IDENTITY(1,1) PRIMARY KEY,
+>>>>>>> Log1_N
     courseId INT,
     mentorId INT,
     slotId INT,
@@ -231,12 +247,21 @@ CREATE TABLE course_mentor_slots (
 Go
 
 -- Thêm dữ liệu cho bảng course_mentor_slots
+<<<<<<< HEAD
 INSERT INTO course_mentor_slots (courseId, mentorId, slotId) VALUES
 (1, 1, 1), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 1
 (1, 1, 2), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 2
 (2, 2, 1), -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 1
 (2, 2, 2); -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 2
 Go
+=======
+INSERT INTO course_mentor_slots (id, courseId, mentorId, slotId) VALUES
+(1, 1, 1, 1), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 1
+(2, 1, 1, 2), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 2
+(3, 2, 2, 1), -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 1
+(4, 2, 2, 2); -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 2
+
+>>>>>>> Log1_N
 -- Bảng liên kết giữa người dùng và khóa học (user_courses)
 CREATE TABLE user_courses (
 	id INT IDENTITY(1,1) PRIMARY KEY,
@@ -247,10 +272,17 @@ CREATE TABLE user_courses (
 );
 Go
 
+<<<<<<< HEAD
 INSERT INTO user_courses (userId, courseId) VALUES
 (1, 1),
 (2, 1),
 (3, 2);
 Go
+=======
+INSERT INTO user_courses (id,userId, courseId) VALUES
+(1,1, 1),
+(2,2, 1),
+(3,3, 2);
+>>>>>>> Log1_N
 
 
