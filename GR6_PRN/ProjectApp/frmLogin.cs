@@ -33,6 +33,7 @@ namespace ProjectApp
             }
             else
             {
+                MessageBox.Show(u.Email.ToString() + ", " + u.Password.ToString());
                 MessageBox.Show("Login Failed");
             }
         }
