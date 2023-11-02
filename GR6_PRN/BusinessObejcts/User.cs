@@ -13,6 +13,7 @@ namespace BusinessObejcts
             MentorRatingUsers = new HashSet<MentorRating>();
             Mentors = new HashSet<Mentor>();
             Registrations = new HashSet<Registration>();
+            UserCourses = new HashSet<UserCourse>();
             UserSlots = new HashSet<UserSlot>();
             UserTests = new HashSet<UserTest>();
         }
@@ -29,6 +30,7 @@ namespace BusinessObejcts
         public virtual ICollection<MentorRating> MentorRatingUsers { get; set; }
         public virtual ICollection<Mentor> Mentors { get; set; }
         public virtual ICollection<Registration> Registrations { get; set; }
+        public virtual ICollection<UserCourse> UserCourses { get; set; }
         public virtual ICollection<UserSlot> UserSlots { get; set; }
         public virtual ICollection<UserTest> UserTests { get; set; }
     }
