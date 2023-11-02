@@ -11,4 +11,4 @@ Staff -> Create New Question -> Edit Existing Question -> Delete Question -> Ran
 
 
 Log 4:
-Administrator -> Create User Accounts -> View User Details -> Edit User Information -> Deactivate User Account
+Administrator -> Create User Accounts -> View User Details -> Edit User Information -> Deactivate User Account``6

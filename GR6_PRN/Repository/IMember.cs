@@ -11,5 +11,11 @@ namespace Repository
         public User checkLogin(string email, string password);
 
         public bool updateMember(User user);
+
+        public bool registration(Registration registration);
+
+        public int getMaxId();
+
+        public bool regisCourseMentorSlot(CourseMentorSlot slot);
     }
 }

@@ -6,7 +6,7 @@ GO
 
 -- Bảng vai trò (role)
 CREATE TABLE roles (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     [name] NVARCHAR(50) NOT NULL
 );
 GO
@@ -20,7 +20,7 @@ INSERT INTO roles (id, [name]) VALUES
 
 -- Bảng người dùng (user)
 CREATE TABLE users (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     email NVARCHAR(255) NOT NULL,
     [password] NVARCHAR(255) NOT NULL,
     [name] NVARCHAR(255),
@@ -38,7 +38,7 @@ INSERT INTO users (id, email, [password], [name], roleId) VALUES
 
 -- Bảng kiểm tra (test)
 CREATE TABLE tests (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     title NVARCHAR(255) NOT NULL
 );
 GO
@@ -50,7 +50,7 @@ INSERT INTO tests (id, title) VALUES
 
 -- Bảng câu hỏi (question)
 CREATE TABLE questions (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     title NVARCHAR(500) NOT NULL,
     optA NVARCHAR(500) NOT NULL,
     optB NVARCHAR(500) NOT NULL,
@@ -81,7 +81,7 @@ INSERT INTO profiles (userId, reg_date) VALUES
 
 -- Bảng slot (slots)
 CREATE TABLE slots (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     [date] DATE NOT NULL,
     start_time TIME,
     end_time TIME
@@ -95,7 +95,7 @@ INSERT INTO slots (id, [date], start_time, end_time) VALUES
 
 -- Bảng câu hỏi trong bài kiểm tra (test_question)
 CREATE TABLE test_questions (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     questionId INT,
     testId INT,
     FOREIGN KEY (questionId) REFERENCES questions(id),
@@ -111,10 +111,10 @@ INSERT INTO test_questions (id, questionId, testId) VALUES
 
 -- Bảng người dùng tham gia kiểm tra (user_tests)
 CREATE TABLE user_tests (
+	id INT IDENTITY(1,1) PRIMARY KEY,
     userId INT,
     testId INT,
     score INT,
-    PRIMARY KEY (userId, testId),
     FOREIGN KEY (userId) REFERENCES users(id),
     FOREIGN KEY (testId) REFERENCES tests(id),
     start_time DATETIME,
@@ -130,23 +130,23 @@ INSERT INTO user_tests (userId, testId, score, start_time, end_time) VALUES
 
 -- Bảng người dùng và slot (user_slots)
 CREATE TABLE user_slots (
+	id INT IDENTITY(1,1) PRIMARY KEY,
     userId INT,
     slotId INT,
-    PRIMARY KEY (userId, slotId),
     FOREIGN KEY (userId) REFERENCES users(id),
     FOREIGN KEY (slotId) REFERENCES slots(id)
 );
 GO
 
-INSERT INTO user_slots (userId, slotId) VALUES
-(1, 1),
-(2, 2),
-(3, 1);
+INSERT INTO user_slots (id, userId, slotId) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(3, 3, 1);
 
 
 -- Bảng Mentor (mentors)
 CREATE TABLE mentors (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     userId INT,
     available_slots INT,
     specialty NVARCHAR(255),
@@ -161,7 +161,7 @@ INSERT INTO mentors (id, userId, available_slots, specialty) VALUES
 
 -- Bảng đăng ký học (registrations)
 CREATE TABLE registrations (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     userId INT,
     slotId INT,
     payment_status INT,
@@ -177,7 +177,7 @@ INSERT INTO registrations (id, userId, slotId, payment_status) VALUES
 
 -- Bảng đánh giá Mentor (mentor_ratings)
 CREATE TABLE mentor_ratings (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     userId INT,
     mentorId INT,
     rating INT,
@@ -193,7 +193,7 @@ INSERT INTO mentor_ratings (id, userId, mentorId, rating, feedback) VALUES
 
 -- Bảng quản lý bài đăng (news_management)
 CREATE TABLE news (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1)  PRIMARY KEY,
     title NVARCHAR(255),
     content NVARCHAR(1000),
     post_date DATE
@@ -206,7 +206,7 @@ INSERT INTO news (id, title, content, post_date) VALUES
 
 -- Bảng khóa học (courses)
 CREATE TABLE courses (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     title NVARCHAR(255) NOT NULL,
     description NVARCHAR(1000),
     start_date DATE,
@@ -220,6 +220,7 @@ INSERT INTO courses (id, title, description, start_date, end_date) VALUES
 
 -- Bảng liên kết giữa khóa học, mentor và slot học (course_mentor_slots)
 CREATE TABLE course_mentor_slots (
+    id INT IDENTITY(1,1) PRIMARY KEY,
     courseId INT,
     mentorId INT,
     slotId INT,
@@ -230,14 +231,15 @@ CREATE TABLE course_mentor_slots (
 
 
 -- Thêm dữ liệu cho bảng course_mentor_slots
-INSERT INTO course_mentor_slots (courseId, mentorId, slotId) VALUES
-(1, 1, 1), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 1
-(1, 1, 2), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 2
-(2, 2, 1), -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 1
-(2, 2, 2); -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 2
+INSERT INTO course_mentor_slots (id, courseId, mentorId, slotId) VALUES
+(1, 1, 1, 1), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 1
+(2, 1, 1, 2), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 2
+(3, 2, 2, 1), -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 1
+(4, 2, 2, 2); -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 2
 
 -- Bảng liên kết giữa người dùng và khóa học (user_courses)
 CREATE TABLE user_courses (
+	id INT IDENTITY(1,1) PRIMARY KEY,
     userId INT,
     courseId INT,
     FOREIGN KEY (userId) REFERENCES users(id),
@@ -245,9 +247,9 @@ CREATE TABLE user_courses (
 );
 
 
-INSERT INTO user_courses (userId, courseId) VALUES
-(1, 1),
-(2, 1),
-(3, 2);
+INSERT INTO user_courses (id,userId, courseId) VALUES
+(1,1, 1),
+(2,2, 1),
+(3,3, 2);
 
 

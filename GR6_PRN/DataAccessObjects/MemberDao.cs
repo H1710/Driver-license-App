@@ -57,5 +57,60 @@ namespace DataAccessObjects
             }
             return rs;
         }
+
+        public static bool Registration(Registration registration)
+        {
+            bool rs = false;
+            try
+            {
+                using var db = new PRN211Context();
+                db.Registrations.Add(registration);
+                db.SaveChanges();
+                rs = true;
+                return rs;
+            }catch(Exception ex)
+            {
+                Console.WriteLine (ex.Message);
+            }
+            return rs;
+        }
+
+        public static bool regisCourseMentorSlot(CourseMentorSlot courseMentorSlot)
+        {
+            bool success = false;
+            try
+            {
+                using (var db = new PRN211Context())
+                {
+                    db.CourseMentorSlots.Add(courseMentorSlot);
+                    int affectedRows = db.SaveChanges();
+
+                    if (affectedRows > 0)
+                    {
+                        success = true;
+                    }
+                    else
+                    {
+                        // The data was not saved. Handle this case accordingly.
+                        Console.WriteLine("No rows were affected. Data not saved.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception and its message for debugging purposes.
+                Console.WriteLine("Error in regisCourseMentorSlot: " + ex.Message);
+            }
+            return success;
+        }
+
+
+        public static int getMaxId()
+        {
+            int max = 0;
+            using var db = new PRN211Context();
+            max = db.Registrations.Max(r => r.Id);
+            return max;
+        }
     }
 }

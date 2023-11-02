@@ -41,6 +41,11 @@
             txtEndDate = new System.Windows.Forms.TextBox();
             cboCourse = new System.Windows.Forms.ComboBox();
             btnSelect = new System.Windows.Forms.Button();
+            lbCourse = new System.Windows.Forms.Label();
+            lbSlot = new System.Windows.Forms.Label();
+            lbMentor = new System.Windows.Forms.Label();
+            cboMentor = new System.Windows.Forms.ComboBox();
+            cboSlot = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvCourse).BeginInit();
             SuspendLayout();
             // 
@@ -137,26 +142,76 @@
             // cboCourse
             // 
             cboCourse.FormattingEnabled = true;
-            cboCourse.Location = new System.Drawing.Point(647, 81);
+            cboCourse.Location = new System.Drawing.Point(649, 115);
             cboCourse.Name = "cboCourse";
             cboCourse.Size = new System.Drawing.Size(338, 28);
             cboCourse.TabIndex = 11;
+            cboCourse.SelectedValueChanged += cboCourse_SelectedValueChanged;
             // 
             // btnSelect
             // 
             btnSelect.AutoSize = true;
-            btnSelect.Location = new System.Drawing.Point(1011, 81);
+            btnSelect.Location = new System.Drawing.Point(1050, 202);
             btnSelect.Name = "btnSelect";
-            btnSelect.Size = new System.Drawing.Size(108, 30);
+            btnSelect.Size = new System.Drawing.Size(122, 30);
             btnSelect.TabIndex = 12;
-            btnSelect.Text = "Select Course";
+            btnSelect.Text = "Register Course";
             btnSelect.UseVisualStyleBackColor = true;
+            btnSelect.Click += btnSelect_Click;
+            // 
+            // lbCourse
+            // 
+            lbCourse.AutoSize = true;
+            lbCourse.Location = new System.Drawing.Point(649, 81);
+            lbCourse.Name = "lbCourse";
+            lbCourse.Size = new System.Drawing.Size(54, 20);
+            lbCourse.TabIndex = 13;
+            lbCourse.Text = "Course";
+            // 
+            // lbSlot
+            // 
+            lbSlot.AutoSize = true;
+            lbSlot.Location = new System.Drawing.Point(649, 171);
+            lbSlot.Name = "lbSlot";
+            lbSlot.Size = new System.Drawing.Size(35, 20);
+            lbSlot.TabIndex = 14;
+            lbSlot.Text = "Slot";
+            // 
+            // lbMentor
+            // 
+            lbMentor.AutoSize = true;
+            lbMentor.Location = new System.Drawing.Point(649, 261);
+            lbMentor.Name = "lbMentor";
+            lbMentor.Size = new System.Drawing.Size(57, 20);
+            lbMentor.TabIndex = 15;
+            lbMentor.Text = "Mentor";
+            // 
+            // cboMentor
+            // 
+            cboMentor.FormattingEnabled = true;
+            cboMentor.Location = new System.Drawing.Point(649, 295);
+            cboMentor.Name = "cboMentor";
+            cboMentor.Size = new System.Drawing.Size(338, 28);
+            cboMentor.TabIndex = 16;
+            // 
+            // cboSlot
+            // 
+            cboSlot.FormattingEnabled = true;
+            cboSlot.Location = new System.Drawing.Point(649, 204);
+            cboSlot.Name = "cboSlot";
+            cboSlot.Size = new System.Drawing.Size(338, 28);
+            cboSlot.TabIndex = 17;
             // 
             // frmCourse
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1198, 637);
+            Controls.Add(cboSlot);
+            Controls.Add(cboMentor);
+            Controls.Add(lbMentor);
+            Controls.Add(lbSlot);
+            Controls.Add(lbCourse);
             Controls.Add(btnSelect);
             Controls.Add(cboCourse);
             Controls.Add(txtEndDate);
@@ -193,5 +248,10 @@
         private System.Windows.Forms.TextBox txtEndDate;
         private System.Windows.Forms.ComboBox cboCourse;
         private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Label lbCourse;
+        private System.Windows.Forms.Label lbSlot;
+        private System.Windows.Forms.Label lbMentor;
+        private System.Windows.Forms.ComboBox cboMentor;
+        private System.Windows.Forms.ComboBox cboSlot;
     }
 }
