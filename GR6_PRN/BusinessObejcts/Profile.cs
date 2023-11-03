@@ -7,7 +7,8 @@ namespace BusinessObejcts
 {
     public partial class Profile
     {
-        public int UserId { get; set; }
+        public int Id { get; set; }
+        public int? UserId { get; set; }
         public DateTime? RegDate { get; set; }
 
         public virtual User User { get; set; }

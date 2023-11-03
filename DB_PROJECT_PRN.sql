@@ -6,7 +6,7 @@ GO
 
 -- Bảng vai trò (role)
 CREATE TABLE roles (
-    id INT IDENTITY(1,1) PRIMARY KEY,
+    id INT PRIMARY KEY,
     [name] NVARCHAR(50) NOT NULL
 );
 GO
@@ -67,7 +67,8 @@ Go
 
 -- Bảng hồ sơ (profile)
 CREATE TABLE profiles (
-    userId INT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    userId INT,
     reg_date DATE,
     FOREIGN KEY (userId) REFERENCES users(id)
 );
@@ -88,9 +89,9 @@ CREATE TABLE slots (
 );
 GO
 
-INSERT INTO slots (id, [date], start_time, end_time) VALUES
-(1, '2023-11-01', '09:00:00', '10:30:00'),
-(2, '2023-11-01', '11:00:00', '12:30:00');
+INSERT INTO slots ([date], start_time, end_time) VALUES
+('2023-11-01', '09:00:00', '10:30:00'),
+('2023-11-01', '11:00:00', '12:30:00');
 Go
 
 -- Bảng câu hỏi trong bài kiểm tra (test_question)
@@ -138,19 +139,14 @@ CREATE TABLE user_slots (
 );
 GO
 
-<<<<<<< HEAD
+
 INSERT INTO user_slots (userId, slotId) VALUES
 (1,1),
 (2,2),
 (3,1);
 Go
-=======
-INSERT INTO user_slots (id, userId, slotId) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 1);
 
->>>>>>> Log1_N
+
 
 -- Bảng Mentor (mentors)
 CREATE TABLE mentors (
@@ -167,21 +163,7 @@ INSERT INTO mentors (userId, available_slots, specialty) VALUES
 (2, 2, 'Driving License B');
 Go
 
--- Bảng đăng ký học (registrations)
-CREATE TABLE registrations (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-    userId INT,
-    slotId INT,
-    payment_status INT,
-    FOREIGN KEY (userId) REFERENCES users(id),
-    FOREIGN KEY (slotId) REFERENCES slots(id)
-);
-Go
 
-INSERT INTO registrations (userId, slotId, payment_status) VALUES
-(3, 2, 1),
-(3, 1, 1);
-Go
 
 -- Bảng đánh giá Mentor (mentor_ratings)
 CREATE TABLE mentor_ratings (
@@ -191,7 +173,7 @@ CREATE TABLE mentor_ratings (
     rating INT,
     feedback NVARCHAR(1000),
     FOREIGN KEY (userId) REFERENCES users(id),
-    FOREIGN KEY (mentorId) REFERENCES users(id)
+    FOREIGN KEY (mentorId) REFERENCES mentors(id)
 );
 Go
 INSERT INTO mentor_ratings (userId, mentorId, rating, feedback) VALUES
@@ -201,11 +183,7 @@ Go
 
 -- Bảng quản lý bài đăng (news_management)
 CREATE TABLE news (
-<<<<<<< HEAD
     id INT IDENTITY(1,1) PRIMARY KEY,
-=======
-    id INT IDENTITY(1,1)  PRIMARY KEY,
->>>>>>> Log1_N
     title NVARCHAR(255),
     content NVARCHAR(1000),
     post_date DATE
@@ -232,11 +210,7 @@ Go
 
 -- Bảng liên kết giữa khóa học, mentor và slot học (course_mentor_slots)
 CREATE TABLE course_mentor_slots (
-<<<<<<< HEAD
 	id INT IDENTITY(1,1) PRIMARY KEY,
-=======
-    id INT IDENTITY(1,1) PRIMARY KEY,
->>>>>>> Log1_N
     courseId INT,
     mentorId INT,
     slotId INT,
@@ -246,22 +220,14 @@ CREATE TABLE course_mentor_slots (
 );
 Go
 
--- Thêm dữ liệu cho bảng course_mentor_slots
-<<<<<<< HEAD
+
 INSERT INTO course_mentor_slots (courseId, mentorId, slotId) VALUES
 (1, 1, 1), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 1
 (1, 1, 2), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 2
 (2, 2, 1), -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 1
 (2, 2, 2); -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 2
-Go
-=======
-INSERT INTO course_mentor_slots (id, courseId, mentorId, slotId) VALUES
-(1, 1, 1, 1), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 1
-(2, 1, 1, 2), -- Khóa học 1 được Mentor 1 hướng dẫn trong slot 2
-(3, 2, 2, 1), -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 1
-(4, 2, 2, 2); -- Khóa học 2 được Mentor 2 hướng dẫn trong slot 2
 
->>>>>>> Log1_N
+
 -- Bảng liên kết giữa người dùng và khóa học (user_courses)
 CREATE TABLE user_courses (
 	id INT IDENTITY(1,1) PRIMARY KEY,
@@ -272,17 +238,23 @@ CREATE TABLE user_courses (
 );
 Go
 
-<<<<<<< HEAD
 INSERT INTO user_courses (userId, courseId) VALUES
 (1, 1),
 (2, 1),
 (3, 2);
-Go
-=======
-INSERT INTO user_courses (id,userId, courseId) VALUES
-(1,1, 1),
-(2,2, 1),
-(3,3, 2);
->>>>>>> Log1_N
 
+-- Bảng đăng ký học (registrations)
+CREATE TABLE registrations (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    userId INT,
+	idCMS INT,
+	FOREIGN KEY (idCMS) REFERENCES course_mentor_slots(id),
+    FOREIGN KEY (userId) REFERENCES users(id),
+);
+Go
+
+INSERT INTO registrations (userId, idCMS) VALUES
+(2, 1),
+(1, 1);
+Go
 
