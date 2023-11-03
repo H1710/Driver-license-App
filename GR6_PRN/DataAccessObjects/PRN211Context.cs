@@ -170,11 +170,11 @@ namespace BusinessObejcts
             modelBuilder.Entity<Profile>(entity =>
             {
                 entity.HasKey(e => e.UserId)
-<<<<<<< HEAD
-                    .HasName("PK__profiles__CB9A1CFF5A6CF0E3");
-=======
+
+                    .HasName("PK__profiles__CB9A1CFF5A6CF0E3")
+
                     .HasName("PK__profiles__CB9A1CFF5B4D3667");
->>>>>>> Log1_N
+
 
                 entity.ToTable("profiles");
 
