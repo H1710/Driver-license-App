@@ -150,14 +150,14 @@
             // 
             // btnSelect
             // 
-            btnSelect.AutoSize = true;
+/*            btnSelect.AutoSize = true;
             btnSelect.Location = new System.Drawing.Point(1050, 202);
             btnSelect.Name = "btnSelect";
             btnSelect.Size = new System.Drawing.Size(122, 30);
             btnSelect.TabIndex = 12;
             btnSelect.Text = "Register Course";
             btnSelect.UseVisualStyleBackColor = true;
-            btnSelect.Click += btnSelect_Click;
+            btnSelect.Click += btnSelect_Click;*/
             // 
             // lbCourse
             // 

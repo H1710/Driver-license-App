@@ -151,7 +151,7 @@ namespace ProjectApp
 
 
 
-        private void btnSelect_Click(object sender, EventArgs e)
+/*        private void btnSelect_Click(object sender, EventArgs e)
         {
             // Parse the selectedCourseId from the courseDictionary
             string selectedDisplayString = cboCourse.SelectedItem.ToString();
@@ -173,19 +173,19 @@ namespace ProjectApp
                         SlotId = selectedSlotId,
                         PaymentStatus = 1
                     };
-/*                    bool rs = manaMem.registration(registration);
-                    MessageBox.Show(rs.ToString());*/
+*//*                    bool rs = manaMem.registration(registration);
+                    MessageBox.Show(rs.ToString());*//*
                     CourseMentorSlot courseMentorSlot = new CourseMentorSlot()
                     {
-                        /*                        CourseId = selectedCourseId,
+                        *//*                        CourseId = selectedCourseId,
                                                 MentorId = selectedMentorId,
-                                                SlotId = selectedSlotId,*/
+                                                SlotId = selectedSlotId,*//*
                         CourseId = 1,
                         MentorId = 1,
                         SlotId = 1,
                     };
-/*                    bool rs1 = manaMem.regisCourseMentorSlot(courseMentorSlot);
-                    MessageBox.Show(rs1.ToString());*/
+*//*                    bool rs1 = manaMem.regisCourseMentorSlot(courseMentorSlot);
+                    MessageBox.Show(rs1.ToString());*//*
                     UserSlot slotSlot = new UserSlot()
                     {
                         UserId = user.Id,
@@ -199,8 +199,8 @@ namespace ProjectApp
                         UserId = user.Id,
                         CourseId = selectedCourseId,
                     };
-/*                    bool rs3 = manaCourse.regisUserCourse(slotCourse);
-                    MessageBox.Show(rs3.ToString());*/
+*//*                    bool rs3 = manaCourse.regisUserCourse(slotCourse);
+                    MessageBox.Show(rs3.ToString());*//*
                 }
                 catch (Exception ex)
                 {
@@ -212,7 +212,7 @@ namespace ProjectApp
             {
                 MessageBox.Show("Invalid selection.");
             }
-        }
+        }*/
     }
 }
 
