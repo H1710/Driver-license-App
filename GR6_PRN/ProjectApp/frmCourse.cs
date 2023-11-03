@@ -166,11 +166,9 @@ namespace ProjectApp
             {
                 try
                 {
-                    int id = manaMem.getMaxId() + 1;
                     MessageBox.Show(selectedCourseId + "s" + selectedSlotId + "m" + selectedMentorId);
                     Registration registration = new Registration()
                     {
-                        Id = id,
                         UserId = user.Id,
                         SlotId = selectedSlotId,
                         PaymentStatus = 1

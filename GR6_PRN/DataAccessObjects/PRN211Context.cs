@@ -2,12 +2,8 @@
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-<<<<<<< HEAD
 using Microsoft.Extensions.Configuration;
-
-=======
 using BusinessObejcts;
->>>>>>> Log1_N
 #nullable disable
 
 namespace BusinessObejcts
