@@ -170,7 +170,6 @@ namespace ProjectApp
                     MessageBox.Show(selectedCourseId + "s" + selectedSlotId + "m" + selectedMentorId);
                     Registration registration = new Registration()
                     {
-                        Id = id,
                         UserId = user.Id,
                         SlotId = selectedSlotId,
                         PaymentStatus = 1
@@ -194,7 +193,6 @@ namespace ProjectApp
                         SlotId = selectedSlotId,
                     };
                     bool rs2 = manaSlot.regisUserSlot(slotSlot);
-                    MessageBox.Show(rs2.ToString());
 
                     UserCourse slotCourse = new UserCourse()
                     {
@@ -208,7 +206,6 @@ namespace ProjectApp
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
             else
             {
