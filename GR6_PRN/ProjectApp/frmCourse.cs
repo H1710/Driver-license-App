@@ -151,57 +151,15 @@ namespace ProjectApp
 
 
 
-/*        private void btnSelect_Click(object sender, EventArgs e)
+        private void btnSelect_Click(object sender, EventArgs e)
         {
             try
             {
-<<<<<<< HEAD
-                try
-                {
-                    MessageBox.Show(selectedCourseId + "s" + selectedSlotId + "m" + selectedMentorId);
-                    Registration registration = new Registration()
-                    {
-                        UserId = user.Id,
-                        SlotId = selectedSlotId,
-                        PaymentStatus = 1
-                    };
-*//*                    bool rs = manaMem.registration(registration);
-                    MessageBox.Show(rs.ToString());*//*
-                    CourseMentorSlot courseMentorSlot = new CourseMentorSlot()
-                    {
-                        *//*                        CourseId = selectedCourseId,
-                                                MentorId = selectedMentorId,
-                                                SlotId = selectedSlotId,*//*
-                        CourseId = 1,
-                        MentorId = 1,
-                        SlotId = 1,
-                    };
-*//*                    bool rs1 = manaMem.regisCourseMentorSlot(courseMentorSlot);
-                    MessageBox.Show(rs1.ToString());*//*
-                    UserSlot slotSlot = new UserSlot()
-                    {
-                        UserId = user.Id,
-                        SlotId = selectedSlotId,
-                    };
-                    bool rs2 = manaSlot.regisUserSlot(slotSlot);
-                    MessageBox.Show(rs2.ToString());
-
-                    UserCourse slotCourse = new UserCourse()
-                    {
-                        UserId = user.Id,
-                        CourseId = selectedCourseId,
-                    };
-*//*                    bool rs3 = manaCourse.regisUserCourse(slotCourse);
-                    MessageBox.Show(rs3.ToString());*//*
-                }
-                catch (Exception ex)
-=======
                 string selectedDisplayString = cboCourse.SelectedItem?.ToString();
                 string selectedDisplay1String = cboSlot.SelectedItem?.ToString();
                 string selectedDisplay2String = cboMentor.SelectedItem?.ToString();
 
                 if (string.IsNullOrEmpty(selectedDisplayString) || string.IsNullOrEmpty(selectedDisplay1String) || string.IsNullOrEmpty(selectedDisplay2String))
->>>>>>> Log1_N
                 {
                     MessageBox.Show("Please select all required options.");
                     return;
@@ -272,13 +230,15 @@ namespace ProjectApp
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-<<<<<<< HEAD
-        }*/
-=======
         }
 
-        private void btnTest_Click(object sender, EventArgs e)
+    }
+
+/*        private void btnTest_Click(object sender, EventArgs e)
         {
 
-        }
+        }*/
+
+    }
+
 

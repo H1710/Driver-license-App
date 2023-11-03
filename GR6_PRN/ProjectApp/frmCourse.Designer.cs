@@ -151,19 +151,19 @@
             // 
             // btnSelect
             // 
-<<<<<<< HEAD
-/*            btnSelect.AutoSize = true;
+
+            btnSelect.AutoSize = true;
             btnSelect.Location = new System.Drawing.Point(1050, 202);
-=======
+
             btnSelect.AutoSize = true;
             btnSelect.Location = new System.Drawing.Point(1047, 204);
->>>>>>> Log1_N
+
             btnSelect.Name = "btnSelect";
             btnSelect.Size = new System.Drawing.Size(122, 30);
             btnSelect.TabIndex = 12;
             btnSelect.Text = "Register Course";
             btnSelect.UseVisualStyleBackColor = true;
-            btnSelect.Click += btnSelect_Click;*/
+            btnSelect.Click += btnSelect_Click;
             // 
             // lbCourse
             // 
@@ -210,13 +210,13 @@
             // 
             // btnTest
             // 
-            btnTest.Location = new System.Drawing.Point(1047, 294);
+/*            btnTest.Location = new System.Drawing.Point(1047, 294);
             btnTest.Name = "btnTest";
             btnTest.Size = new System.Drawing.Size(122, 29);
             btnTest.TabIndex = 18;
             btnTest.Text = "Take a test";
             btnTest.UseVisualStyleBackColor = true;
-            btnTest.Click += btnTest_Click;
+            btnTest.Click += btnTest_Click;*/
             // 
             // frmCourse
             // 

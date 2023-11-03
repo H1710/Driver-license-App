@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.csproj.AssemblyReference.cache
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.frmCourse.resources
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.frmLogin.resources
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.frmMember.resources
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.frmMentor.resources
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.frmStaff.resources
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.csproj.GenerateResource.cache
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.GeneratedMSBuildEditorConfig.editorconfig
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.AssemblyInfoInputs.cache
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.AssemblyInfo.cs
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.csproj.CoreCompileInputs.cache
->>>>>>> Log1_N
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\bin\Debug\net5.0-windows\appsettings.json
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\bin\Debug\net5.0-windows\ProjectApp.exe
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\bin\Debug\net5.0-windows\ProjectApp.deps.json
@@ -66,7 +52,6 @@ D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\bin\Debug\net5.0
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\bin\Debug\net5.0-windows\Repository.pdb
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\bin\Debug\net5.0-windows\BusinessObejcts.pdb
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\bin\Debug\net5.0-windows\DataAccessObjects.pdb
-<<<<<<< HEAD
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.csproj.AssemblyReference.cache
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.frmCourse.resources
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.frmLogin.resources
@@ -78,15 +63,9 @@ D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.AssemblyInfoInputs.cache
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.AssemblyInfo.cs
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.csproj.CoreCompileInputs.cache
-=======
->>>>>>> Log1_N
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.csproj.CopyComplete
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.dll
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\refint\ProjectApp.dll
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.pdb
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.genruntimeconfig.cache
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ref\ProjectApp.dll
-<<<<<<< HEAD
-=======
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\ProjectApp\obj\Debug\net5.0-windows\ProjectApp.frmTest.resources
->>>>>>> Log1_N
