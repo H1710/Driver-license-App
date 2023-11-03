@@ -169,13 +169,6 @@ namespace BusinessObejcts
 
             modelBuilder.Entity<Profile>(entity =>
             {
-                entity.HasKey(e => e.UserId)
-
-                    .HasName("PK__profiles__CB9A1CFF5A6CF0E3")
-
-                    .HasName("PK__profiles__CB9A1CFF5B4D3667");
-
-
                 entity.ToTable("profiles");
 
                 entity.Property(e => e.UserId)
