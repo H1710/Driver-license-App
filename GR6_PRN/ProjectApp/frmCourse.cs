@@ -281,7 +281,4 @@ namespace ProjectApp
         {
 
         }
->>>>>>> Log1_N
-    }
-}
 
