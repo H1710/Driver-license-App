@@ -9,9 +9,9 @@ namespace BusinessObejcts
     {
         public User()
         {
-            MentorRatingMentors = new HashSet<MentorRating>();
-            MentorRatingUsers = new HashSet<MentorRating>();
+            MentorRatings = new HashSet<MentorRating>();
             Mentors = new HashSet<Mentor>();
+            Profiles = new HashSet<Profile>();
             Registrations = new HashSet<Registration>();
             UserCourses = new HashSet<UserCourse>();
             UserSlots = new HashSet<UserSlot>();
@@ -25,10 +25,9 @@ namespace BusinessObejcts
         public int? RoleId { get; set; }
 
         public virtual Role Role { get; set; }
-        public virtual Profile Profile { get; set; }
-        public virtual ICollection<MentorRating> MentorRatingMentors { get; set; }
-        public virtual ICollection<MentorRating> MentorRatingUsers { get; set; }
+        public virtual ICollection<MentorRating> MentorRatings { get; set; }
         public virtual ICollection<Mentor> Mentors { get; set; }
+        public virtual ICollection<Profile> Profiles { get; set; }
         public virtual ICollection<Registration> Registrations { get; set; }
         public virtual ICollection<UserCourse> UserCourses { get; set; }
         public virtual ICollection<UserSlot> UserSlots { get; set; }

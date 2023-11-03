@@ -13,7 +13,7 @@ namespace BusinessObejcts
         public int? Rating { get; set; }
         public string Feedback { get; set; }
 
-        public virtual User Mentor { get; set; }
+        public virtual Mentor Mentor { get; set; }
         public virtual User User { get; set; }
     }
 }

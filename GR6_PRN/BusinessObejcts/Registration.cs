@@ -9,10 +9,9 @@ namespace BusinessObejcts
     {
         public int Id { get; set; }
         public int? UserId { get; set; }
-        public int? SlotId { get; set; }
-        public int? PaymentStatus { get; set; }
+        public int? IdCms { get; set; }
 
-        public virtual Slot Slot { get; set; }
+        public virtual CourseMentorSlot IdCmsNavigation { get; set; }
         public virtual User User { get; set; }
     }
 }

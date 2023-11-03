@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 using BusinessObejcts;
 #nullable disable
 
@@ -38,9 +40,19 @@ namespace DataAccessObjects
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-HP2DTMU\\MSSQLSERVER01; Database=PRN211; Uid=sa; Pwd=12345");
+/*#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=DESKTOP-HP2DTMU\\MSSQLSERVER01; Database=PRN211; Uid=sa; Pwd=12345");*/
+                optionsBuilder.UseSqlServer(GetConectionString());
             }
+        }
+
+        public string GetConectionString()
+        {
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+            return config["ConnectionStrings:DefaultDB"];
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -86,17 +98,17 @@ namespace DataAccessObjects
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.CourseMentorSlots)
                     .HasForeignKey(d => d.CourseId)
-                    .HasConstraintName("FK__course_me__cours__5EBF139D");
+                    .HasConstraintName("FK__course_me__cours__5AEE82B9");
 
                 entity.HasOne(d => d.Mentor)
                     .WithMany(p => p.CourseMentorSlots)
                     .HasForeignKey(d => d.MentorId)
-                    .HasConstraintName("FK__course_me__mento__5FB337D6");
+                    .HasConstraintName("FK__course_me__mento__5BE2A6F2");
 
                 entity.HasOne(d => d.Slot)
                     .WithMany(p => p.CourseMentorSlots)
                     .HasForeignKey(d => d.SlotId)
-                    .HasConstraintName("FK__course_me__slotI__60A75C0F");
+                    .HasConstraintName("FK__course_me__slotI__5CD6CB2B");
             });
 
             modelBuilder.Entity<Mentor>(entity =>
@@ -136,14 +148,14 @@ namespace DataAccessObjects
                 entity.Property(e => e.UserId).HasColumnName("userId");
 
                 entity.HasOne(d => d.Mentor)
-                    .WithMany(p => p.MentorRatingMentors)
+                    .WithMany(p => p.MentorRatings)
                     .HasForeignKey(d => d.MentorId)
-                    .HasConstraintName("FK__mentor_ra__mento__5812160E");
+                    .HasConstraintName("FK__mentor_ra__mento__5441852A");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.MentorRatingUsers)
+                    .WithMany(p => p.MentorRatings)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__mentor_ra__userI__571DF1D5");
+                    .HasConstraintName("FK__mentor_ra__userI__534D60F1");
             });
 
             modelBuilder.Entity<News>(entity =>
@@ -167,23 +179,19 @@ namespace DataAccessObjects
 
             modelBuilder.Entity<Profile>(entity =>
             {
-                entity.HasKey(e => e.UserId)
-                    .HasName("PK__profiles__CB9A1CFF5B4D3667");
-
                 entity.ToTable("profiles");
 
-                entity.Property(e => e.UserId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("userId");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.RegDate)
                     .HasColumnType("date")
                     .HasColumnName("reg_date");
 
+                entity.Property(e => e.UserId).HasColumnName("userId");
+
                 entity.HasOne(d => d.User)
-                    .WithOne(p => p.Profile)
-                    .HasForeignKey<Profile>(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .WithMany(p => p.Profiles)
+                    .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK__profiles__userId__403A8C7D");
             });
 
@@ -230,28 +238,28 @@ namespace DataAccessObjects
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.PaymentStatus).HasColumnName("payment_status");
-
-                entity.Property(e => e.SlotId).HasColumnName("slotId");
+                entity.Property(e => e.IdCms).HasColumnName("idCMS");
 
                 entity.Property(e => e.UserId).HasColumnName("userId");
 
-                entity.HasOne(d => d.Slot)
+                entity.HasOne(d => d.IdCmsNavigation)
                     .WithMany(p => p.Registrations)
-                    .HasForeignKey(d => d.SlotId)
-                    .HasConstraintName("FK__registrat__slotI__5441852A");
+                    .HasForeignKey(d => d.IdCms)
+                    .HasConstraintName("FK__registrat__idCMS__6383C8BA");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Registrations)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__registrat__userI__534D60F1");
+                    .HasConstraintName("FK__registrat__userI__6477ECF3");
             });
 
             modelBuilder.Entity<Role>(entity =>
             {
                 entity.ToTable("roles");
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
@@ -348,12 +356,12 @@ namespace DataAccessObjects
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.UserCourses)
                     .HasForeignKey(d => d.CourseId)
-                    .HasConstraintName("FK__user_cour__cours__6477ECF3");
+                    .HasConstraintName("FK__user_cour__cours__60A75C0F");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserCourses)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__user_cour__userI__6383C8BA");
+                    .HasConstraintName("FK__user_cour__userI__5FB337D6");
             });
 
             modelBuilder.Entity<UserSlot>(entity =>

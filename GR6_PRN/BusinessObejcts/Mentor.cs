@@ -10,6 +10,7 @@ namespace BusinessObejcts
         public Mentor()
         {
             CourseMentorSlots = new HashSet<CourseMentorSlot>();
+            MentorRatings = new HashSet<MentorRating>();
         }
 
         public int Id { get; set; }
@@ -19,5 +20,6 @@ namespace BusinessObejcts
 
         public virtual User User { get; set; }
         public virtual ICollection<CourseMentorSlot> CourseMentorSlots { get; set; }
+        public virtual ICollection<MentorRating> MentorRatings { get; set; }
     }
 }

@@ -10,7 +10,6 @@ namespace BusinessObejcts
         public Slot()
         {
             CourseMentorSlots = new HashSet<CourseMentorSlot>();
-            Registrations = new HashSet<Registration>();
             UserSlots = new HashSet<UserSlot>();
         }
 
@@ -20,7 +19,6 @@ namespace BusinessObejcts
         public TimeSpan? EndTime { get; set; }
 
         public virtual ICollection<CourseMentorSlot> CourseMentorSlots { get; set; }
-        public virtual ICollection<Registration> Registrations { get; set; }
         public virtual ICollection<UserSlot> UserSlots { get; set; }
     }
 }
