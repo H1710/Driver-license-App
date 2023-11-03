@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\bin\Debug\net5.0\BusinessObejcts.deps.json
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\bin\Debug\net5.0\BusinessObejcts.runtimeconfig.json
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\bin\Debug\net5.0\BusinessObejcts.runtimeconfig.dev.json
@@ -17,3 +18,5 @@ D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\n
 >>>>>>> Log1_N
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\bin\Debug\net5.0\ref\BusinessObejcts.dll
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\refint\BusinessObejcts.dll
+=======
+>>>>>>> Log1_N
