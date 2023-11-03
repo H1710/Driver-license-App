@@ -1,5 +1,5 @@
 Log 1:
-Member -> Update Profile -> View Available Courses -> Register for Course -> Select Time Slots -> Choose Mentor -> Take Practice Test
+Member -> Update Profile -> View Available Courses -> Register for Course -> Select Time Slots -> Choose Mentor
 
 
 Log 2:
@@ -7,7 +7,7 @@ Staff -> View Member Information -> View Course Questions -> Manage User Profile
 
 
 Log 3:
-Staff -> Create New Question -> Edit Existing Question -> Delete Question -> Randomly Generate Questions
+Staff -> Create New Question -> Edit Existing Question -> Delete Question -> Randomly Generate Questions -> Take Practice Test
 
 
 Log 4:

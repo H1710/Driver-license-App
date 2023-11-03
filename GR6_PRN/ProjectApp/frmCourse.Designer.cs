@@ -46,6 +46,7 @@
             lbMentor = new System.Windows.Forms.Label();
             cboMentor = new System.Windows.Forms.ComboBox();
             cboSlot = new System.Windows.Forms.ComboBox();
+            btnTest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)dgvCourse).BeginInit();
             SuspendLayout();
             // 
@@ -150,14 +151,14 @@
             // 
             // btnSelect
             // 
-/*            btnSelect.AutoSize = true;
-            btnSelect.Location = new System.Drawing.Point(1050, 202);
+            btnSelect.AutoSize = true;
+            btnSelect.Location = new System.Drawing.Point(1047, 204);
             btnSelect.Name = "btnSelect";
             btnSelect.Size = new System.Drawing.Size(122, 30);
             btnSelect.TabIndex = 12;
             btnSelect.Text = "Register Course";
             btnSelect.UseVisualStyleBackColor = true;
-            btnSelect.Click += btnSelect_Click;*/
+            btnSelect.Click += btnSelect_Click;
             // 
             // lbCourse
             // 
@@ -202,11 +203,22 @@
             cboSlot.Size = new System.Drawing.Size(338, 28);
             cboSlot.TabIndex = 17;
             // 
+            // btnTest
+            // 
+            btnTest.Location = new System.Drawing.Point(1047, 294);
+            btnTest.Name = "btnTest";
+            btnTest.Size = new System.Drawing.Size(122, 29);
+            btnTest.TabIndex = 18;
+            btnTest.Text = "Take a test";
+            btnTest.UseVisualStyleBackColor = true;
+            btnTest.Click += btnTest_Click;
+            // 
             // frmCourse
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1198, 637);
+            Controls.Add(btnTest);
             Controls.Add(cboSlot);
             Controls.Add(cboMentor);
             Controls.Add(lbMentor);
@@ -253,5 +265,6 @@
         private System.Windows.Forms.Label lbMentor;
         private System.Windows.Forms.ComboBox cboMentor;
         private System.Windows.Forms.ComboBox cboSlot;
+        private System.Windows.Forms.Button btnTest;
     }
 }
