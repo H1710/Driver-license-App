@@ -16,5 +16,27 @@ namespace ProjectApp
         {
             InitializeComponent();
         }
+
+        private void btnMember_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuestion_Click(object sender, EventArgs e)
+        {
+            frmQuestion frm = new frmQuestion();
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\BusinessObejcts\\BusinessObejcts.csproj": {}
+    "C:\\Users\\ntmanh\\Source\\Repos\\H1710\\Driver-license-App\\GR6_PRN\\BusinessObejcts\\BusinessObejcts.csproj": {}
   },
   "projects": {
-    "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\BusinessObejcts\\BusinessObejcts.csproj": {
+    "C:\\Users\\ntmanh\\Source\\Repos\\H1710\\Driver-license-App\\GR6_PRN\\BusinessObejcts\\BusinessObejcts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\BusinessObejcts\\BusinessObejcts.csproj",
+        "projectUniqueName": "C:\\Users\\ntmanh\\Source\\Repos\\H1710\\Driver-license-App\\GR6_PRN\\BusinessObejcts\\BusinessObejcts.csproj",
         "projectName": "BusinessObejcts",
-        "projectPath": "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\BusinessObejcts\\BusinessObejcts.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\BusinessObejcts\\obj\\",
+        "projectPath": "C:\\Users\\ntmanh\\Source\\Repos\\H1710\\Driver-license-App\\GR6_PRN\\BusinessObejcts\\BusinessObejcts.csproj",
+        "packagesPath": "C:\\Users\\ntmanh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ntmanh\\Source\\Repos\\H1710\\Driver-license-App\\GR6_PRN\\BusinessObejcts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ntmanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

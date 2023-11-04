@@ -24,7 +24,7 @@ namespace ProjectApp
         {
             User u = iMem.checkLogin(txtEmail.Text, txtPass.Text);
             if (u != null && u.RoleId == 1)
-            {
+            {   
                 frmMember f = new frmMember()
                 {
                     user = u,

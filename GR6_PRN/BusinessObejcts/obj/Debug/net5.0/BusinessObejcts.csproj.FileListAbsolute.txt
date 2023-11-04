@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 >>>>>>> Log1_N
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\bin\Debug\net5.0\BusinessObejcts.deps.json
@@ -13,17 +12,23 @@ D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\n
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.AssemblyInfo.cs
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.csproj.CoreCompileInputs.cache
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.dll
-<<<<<<< HEAD
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\ref\BusinessObejcts.dll
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.pdb
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.genruntimeconfig.cache
-=======
->>>>>>> Log1_N
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\bin\Debug\net5.0\ref\BusinessObejcts.dll
 D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\refint\BusinessObejcts.dll
-=======
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\refint\BusinessObejcts.dll
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.pdb
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.genruntimeconfig.cache
-D:\CN5\PRN211\Project_PRN\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\ref\BusinessObejcts.dll
->>>>>>> Log1_N
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\bin\Debug\net5.0\BusinessObejcts.deps.json
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\bin\Debug\net5.0\BusinessObejcts.runtimeconfig.json
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\bin\Debug\net5.0\BusinessObejcts.runtimeconfig.dev.json
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\bin\Debug\net5.0\BusinessObejcts.dll
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\bin\Debug\net5.0\BusinessObejcts.pdb
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.csproj.AssemblyReference.cache
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.AssemblyInfoInputs.cache
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.AssemblyInfo.cs
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.csproj.CoreCompileInputs.cache
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.dll
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\refint\BusinessObejcts.dll
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.pdb
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\BusinessObejcts.genruntimeconfig.cache
+C:\Users\ntmanh\Source\Repos\H1710\Driver-license-App\GR6_PRN\BusinessObejcts\obj\Debug\net5.0\ref\BusinessObejcts.dll
