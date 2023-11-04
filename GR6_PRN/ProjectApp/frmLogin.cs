@@ -23,7 +23,7 @@ namespace ProjectApp
         private void btnLogin_Click(object sender, EventArgs e)
         {
             User u = iMem.checkLogin(txtEmail.Text, txtPass.Text);
-            if (u != null && u.RoleId == 1)
+            if (u != null && u.RoleId == 3)
             {
                 frmMember f = new frmMember()
                 {
@@ -33,7 +33,7 @@ namespace ProjectApp
             }
             else
             {
-                MessageBox.Show(u.Email.ToString() + ", " + u.Password.ToString());
+                //MessageBox.Show(u.Email.ToString() + ", " + u.Password.ToString());
                 MessageBox.Show("Login Failed");
             }
         }

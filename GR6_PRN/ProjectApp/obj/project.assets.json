@@ -6217,23 +6217,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\huyth\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\ProjectApp\\ProjectApp.csproj",
+      "projectUniqueName": "C:\\Users\\huyth\\Desktop\\Project_G6_NET1705\\Driver-license-App\\GR6_PRN\\ProjectApp\\ProjectApp.csproj",
       "projectName": "ProjectApp",
-      "projectPath": "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\ProjectApp\\ProjectApp.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\ProjectApp\\obj\\",
+      "projectPath": "C:\\Users\\huyth\\Desktop\\Project_G6_NET1705\\Driver-license-App\\GR6_PRN\\ProjectApp\\ProjectApp.csproj",
+      "packagesPath": "C:\\Users\\huyth\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\huyth\\Desktop\\Project_G6_NET1705\\Driver-license-App\\GR6_PRN\\ProjectApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\huyth\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6249,8 +6249,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\Repository\\Repository.csproj": {
-              "projectPath": "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\Repository\\Repository.csproj"
+            "C:\\Users\\huyth\\Desktop\\Project_G6_NET1705\\Driver-license-App\\GR6_PRN\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\huyth\\Desktop\\Project_G6_NET1705\\Driver-license-App\\GR6_PRN\\Repository\\Repository.csproj"
             }
           }
         }
