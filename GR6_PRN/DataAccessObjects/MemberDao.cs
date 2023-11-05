@@ -95,7 +95,7 @@ namespace DataAccessObjects
         {
             int max = 0;
             using var db = new PRN211Context();
-            max = db.Registrations.Max(r => r.Id);
+            max = db.CourseMentorSlots.Max(r => r.Id);
             return max;
         }
 

@@ -141,7 +141,7 @@ namespace ProjectApp
                 // Find the associated ID from the dictionary
                 int selectedId = courseDictionary.FirstOrDefault(kvp => kvp.Value == selectedDisplayString).Key;
                 CourseMentorSlot course = manaCourse.getCourse(selectedId);
-                if(course != null)
+                if (course != null)
                 {
                     loadSlotToCbo(course);
                 }
@@ -151,68 +151,94 @@ namespace ProjectApp
 
 
 
-/*        private void btnSelect_Click(object sender, EventArgs e)
+        private void btnSelect_Click(object sender, EventArgs e)
         {
-            // Parse the selectedCourseId from the courseDictionary
-            string selectedDisplayString = cboCourse.SelectedItem.ToString();
-            string selectedDisplay1String = cboSlot.SelectedItem.ToString();
-            string selectedDisplay2String = cboMentor.SelectedItem.ToString();
-
-            int selectedCourseId = courseDictionary.FirstOrDefault(kvp => kvp.Value == selectedDisplayString).Key;
-            int selectedSlotId = slotDictionary.FirstOrDefault(s => s.Value == selectedDisplay1String).Key;
-            int selectedMentorId = mentorDictionary.FirstOrDefault(m => m.Value == selectedDisplay2String).Key;
-
-            if (selectedCourseId != -1 && selectedSlotId != -1 && selectedMentorId != -1)
+            try
             {
-                try
-                {
-                    MessageBox.Show(selectedCourseId + "s" + selectedSlotId + "m" + selectedMentorId);
-                    Registration registration = new Registration()
-                    {
-                        UserId = user.Id,
-                        SlotId = selectedSlotId,
-                        PaymentStatus = 1
-                    };
-*//*                    bool rs = manaMem.registration(registration);
-                    MessageBox.Show(rs.ToString());*//*
-                    CourseMentorSlot courseMentorSlot = new CourseMentorSlot()
-                    {
-                        *//*                        CourseId = selectedCourseId,
-                                                MentorId = selectedMentorId,
-                                                SlotId = selectedSlotId,*//*
-                        CourseId = 1,
-                        MentorId = 1,
-                        SlotId = 1,
-                    };
-*//*                    bool rs1 = manaMem.regisCourseMentorSlot(courseMentorSlot);
-                    MessageBox.Show(rs1.ToString());*//*
-                    UserSlot slotSlot = new UserSlot()
-                    {
-                        UserId = user.Id,
-                        SlotId = selectedSlotId,
-                    };
-                    bool rs2 = manaSlot.regisUserSlot(slotSlot);
-                    MessageBox.Show(rs2.ToString());
+                string selectedDisplayString = cboCourse.SelectedItem?.ToString();
+                string selectedDisplay1String = cboSlot.SelectedItem?.ToString();
+                string selectedDisplay2String = cboMentor.SelectedItem?.ToString();
 
-                    UserCourse slotCourse = new UserCourse()
-                    {
-                        UserId = user.Id,
-                        CourseId = selectedCourseId,
-                    };
-*//*                    bool rs3 = manaCourse.regisUserCourse(slotCourse);
-                    MessageBox.Show(rs3.ToString());*//*
-                }
-                catch (Exception ex)
+                if (string.IsNullOrEmpty(selectedDisplayString) || string.IsNullOrEmpty(selectedDisplay1String) || string.IsNullOrEmpty(selectedDisplay2String))
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Please select all required options.");
+                    return;
                 }
 
+                int selectedCourseId = courseDictionary.FirstOrDefault(kvp => kvp.Value == selectedDisplayString).Key;
+                int selectedSlotId = slotDictionary.FirstOrDefault(s => s.Value == selectedDisplay1String).Key;
+                int selectedMentorId = mentorDictionary.FirstOrDefault(m => m.Value == selectedDisplay2String).Key;
+
+                if (selectedCourseId == -1 || selectedSlotId == -1 || selectedMentorId == -1)
+                {
+                    MessageBox.Show("Invalid selection.");
+                    return;
+                }
+
+                CourseMentorSlot courseMentorSlot = new CourseMentorSlot()
+                {
+                    CourseId = selectedCourseId,
+                    MentorId = selectedMentorId,
+                    SlotId = selectedSlotId
+                };
+
+                bool rs1 = manaMem.regisCourseMentorSlot(courseMentorSlot);
+                MessageBox.Show(rs1.ToString());
+
+                int id = manaMem.getMaxId();
+
+                Registration registration = new Registration()
+                {
+                    UserId = user.Id,
+                    IdCms = id,
+                };
+
+                bool rs = manaMem.registration(registration);
+                MessageBox.Show(rs.ToString());
+
+                UserSlot slotSlot = new UserSlot()
+                {
+                    UserId = user.Id,
+                    SlotId = selectedSlotId,
+                };
+
+                bool rs2 = manaSlot.regisUserSlot(slotSlot);
+                MessageBox.Show(rs2.ToString());
+
+                UserCourse slotCourse = new UserCourse()
+                {
+                    UserId = user.Id,
+                    CourseId = selectedCourseId,
+                };
+
+                bool rs3 = manaCourse.regisUserCourse(slotCourse);
+                MessageBox.Show(rs3.ToString());
+
+                if (rs && rs1 && rs2 && rs3)
+                {
+                    cboCourse.Text = string.Empty;
+                    cboSlot.Text = string.Empty;
+                    cboMentor.Text = string.Empty;
+                    MessageBox.Show("Registration successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Registration failed. Please try again.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Invalid selection.");
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
-        }*/
+        }
+
     }
-}
+
+/*        private void btnTest_Click(object sender, EventArgs e)
+        {
+
+        }*/
+
+    }
+
 
