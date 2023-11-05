@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessObejcts;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+
 namespace DataAccessObjects
 {
     public class MemberDao
@@ -40,22 +42,6 @@ namespace DataAccessObjects
                 Console.WriteLine(ex.Message);
             }
             return user;
-        }
-
-        public static bool updateMember(User user)
-        {
-            bool rs = false;
-            try
-            {
-                using var db = new PRN211Context();
-                db.Users.Update(user);
-                db.SaveChanges();
-                rs = true;
-            }catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            return rs;
         }
 
         public static bool Registration(Registration registration)
@@ -111,6 +97,102 @@ namespace DataAccessObjects
             using var db = new PRN211Context();
             max = db.Registrations.Max(r => r.Id);
             return max;
+        }
+
+
+        public static List<User> getAllStaff()
+        {
+            List<User> userList = new List<User>(); // Initialize an empty list
+
+            try
+            {
+                using var db = new PRN211Context();
+                var query = from user in db.Users 
+                            join role in db.Roles on user.RoleId equals role.Id
+                            where role.Name == "Staff"
+                            select new User
+                            {
+                                Id = user.Id,
+                                Name = user.Name,
+                                Email = user.Email,
+                                Password = user.Password,
+                                Role = new Role
+                                {
+                                    Name = role.Name
+                                }
+                            };
+
+                userList = query.ToList();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return userList;
+        }
+
+        public static User getUserById (int id)
+        {
+            User user = null;
+
+            try
+            {
+                using var db = new PRN211Context();
+                user = db.Users.SingleOrDefault(u => u.Id == id);
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return user;
+        }
+
+        public static void AddUser(User newUser, int roleId)
+        {
+            if(getUserById(newUser.Id) == null)
+            {
+                using var db = new PRN211Context();
+                Role role = db.Roles.FirstOrDefault(r => r.Id == roleId);
+                newUser.Role = role;
+                db.Users.Add(newUser);
+                db.SaveChanges();
+            }
+        }
+
+        public static bool updateMember(User user, int roleId)
+        {
+            bool rs = false;
+            try
+            {
+                using var db = new PRN211Context();
+                Role role = db.Roles.FirstOrDefault(r => r.Id == roleId);
+                user.Role = role;
+                db.Users.Update(user);
+                db.SaveChanges();
+                rs = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return rs;
+        }
+
+        public static void DeleteUser(int userId)
+        {
+            using (var db = new PRN211Context())
+            {
+                var user = db.Users.FirstOrDefault(u => u.Id == userId);
+                if (user != null)
+                {
+                    db.Users.Remove(user);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    Console.WriteLine("User with UserId " + userId + " not found.");
+                }
+            }
         }
     }
 }

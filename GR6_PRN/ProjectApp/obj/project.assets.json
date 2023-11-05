@@ -6217,24 +6217,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\huyqu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\ProjectApp\\ProjectApp.csproj",
+      "projectUniqueName": "D:\\project\\Driver-license-App\\GR6_PRN\\ProjectApp\\ProjectApp.csproj",
       "projectName": "ProjectApp",
-      "projectPath": "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\ProjectApp\\ProjectApp.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\ProjectApp\\obj\\",
+      "projectPath": "D:\\project\\Driver-license-App\\GR6_PRN\\ProjectApp\\ProjectApp.csproj",
+      "packagesPath": "C:\\Users\\huyqu\\.nuget\\packages\\",
+      "outputPath": "D:\\project\\Driver-license-App\\GR6_PRN\\ProjectApp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\huyqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6242,15 +6237,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\Repository\\Repository.csproj": {
-              "projectPath": "D:\\CN5\\PRN211\\Project_PRN\\Driver-license-App\\GR6_PRN\\Repository\\Repository.csproj"
+            "D:\\project\\Driver-license-App\\GR6_PRN\\Repository\\Repository.csproj": {
+              "projectPath": "D:\\project\\Driver-license-App\\GR6_PRN\\Repository\\Repository.csproj"
             }
           }
         }
@@ -6275,6 +6269,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.17, 5.0.17]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
