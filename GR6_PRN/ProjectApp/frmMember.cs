@@ -75,7 +75,7 @@ namespace ProjectApp
                 User u = getObjects();
 
                 bool rs = false;
-                rs = manaMem.updateMember(u);
+                rs = manaMem.updateMember(u, int.Parse(txtRole.Text));
                 if (rs)
                 {
                     MessageBox.Show("Update successfully");

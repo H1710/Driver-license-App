@@ -23,17 +23,27 @@ namespace ProjectApp
         private void btnLogin_Click(object sender, EventArgs e)
         {
             User u = iMem.checkLogin(txtEmail.Text, txtPass.Text);
-            if (u != null && u.RoleId == 1)
+            
+            if (u != null )
             {
-                frmMember f = new frmMember()
+                if(u.RoleId == 1)
                 {
-                    user = u,
-                };
-                f.ShowDialog();
+                    frmMember f = new frmMember()
+                    {
+                        user = u,
+                    };
+                    f.ShowDialog();
+                }
+                if(u.RoleId == 4)
+                {
+                    frmAdmin f = new frmAdmin();
+                    f.ShowDialog();
+                }
+                
             }
             else
             {
-                MessageBox.Show(u.Email.ToString() + ", " + u.Password.ToString());
+                
                 MessageBox.Show("Login Failed");
             }
         }

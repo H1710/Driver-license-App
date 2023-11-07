@@ -17,6 +17,12 @@ namespace Repository
 
         public bool registration(Registration registration) => MemberDao.Registration(registration);
 
-        public bool updateMember(User user) => MemberDao.updateMember(user);
+        public bool updateMember(User user, int roleId) => MemberDao.updateMember(user, roleId);
+
+        public List<User> getAllStaff() => MemberDao.getAllStaff();
+
+        public void AddUser(User newUser, int roleId) => MemberDao.AddUser(newUser, roleId);
+
+        public void DeleteUser(int userId) => MemberDao.DeleteUser(userId);
     }
 }
